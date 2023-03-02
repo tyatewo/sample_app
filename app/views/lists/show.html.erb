@@ -1,11 +1,15 @@
-<h1>タイトル</h1>
+<div>
+    <%= flash[:notice] %>
+</div>
+
+<h2>タイトル</h2>
 <p><%= @list.title %></p>
 
 <h2>本文</h2>
-<P><%= @list.body %></P>
+<p><%= @list.body %></p>
 
 <h2>画像</h2>
 <%= image_tag @list.image, size: "300*300" %>
 
-<%= link_to "編集", edit_list_path(@list.id)%>
-<%= link_to "削除", list_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<%= link_to "編集", edit_list_path(@list.id) %>
+<%= link_to "削除", edit_list_path(@list.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
